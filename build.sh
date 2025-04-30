@@ -14,7 +14,7 @@ for version in "${versions[@]}"; do
 
     echo "Building $version..."
 
-    cd "$version_dir" || continue
+    cd "$version" || continue
 
     docker buildx create --use --name multiplatform-builder || true
     docker buildx build --platform ${PLATFORMS} \
